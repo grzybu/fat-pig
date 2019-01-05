@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles-variables";
+@import "styles-reset";
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+#fatpig {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.form-container form > * {
+  width: 100%;
+}
+

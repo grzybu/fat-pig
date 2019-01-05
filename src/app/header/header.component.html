@@ -1,0 +1,10 @@
+<header>
+        <mat-toolbar color="primary" class="button-row">
+                <span><a mat-stroked-button color="warn" routerLink="/">Tłusta świnia</a></span>
+                <span class="fill-remaining-space"></span>
+                <span *ngIf="auth.user | async">
+                   <a  mat-flat-button color="accent" routerLink="user/profile">Profil</a>
+                   <a  mat-flat-button color="warn" (click)="auth.logout()">Wyloguj</a>
+                </span>
+        </mat-toolbar>
+</header>

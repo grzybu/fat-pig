@@ -1,0 +1,28 @@
+<div *ngIf="userService.userData |  async  as user">
+  Witaj {{user.displayName}} ty tłusta świnio, twoje BMI to: {{user | bmi }}
+
+  <img src="/assets/fatpig.jpg" />
+</div>
+
+
+<div class="form-container" *ngIf="userDataObservable | async">
+<form [formGroup]="profileForm"  (ngSubmit)="updateUserData()">
+
+  <mat-form-field>
+    <input matInput placeholder="displayName" formControlName="displayName">
+    <mat-error *ngIf="formErrors.displayName">{{formErrors.displayName}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="weight" formControlName="weight">
+    <mat-error *ngIf="formErrors.weight">{{formErrors.weight}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="height" formControlName="height">
+    <mat-error *ngIf="formErrors.height">{{formErrors.height}}</mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="warn" type="submit" [disabled]="!profileForm.valid">Aktualizuj</button>
+</form>
+</div>

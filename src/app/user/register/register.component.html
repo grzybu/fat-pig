@@ -1,0 +1,23 @@
+<div class="form-container">
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <mat-form-field>
+      <input matInput placeholder="E-mail" formControlName="email" required type="email">
+      <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" required type="password">
+      <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field>
+      <input matInput placeholder="Potwierdź hasło" formControlName="passwordConfirm" required type="password">
+      <mat-error *ngIf="formErrors.passwordConfirm">{{formErrors.passwordConfirm}}</mat-error>
+    </mat-form-field>
+
+
+    <button mat-flat-button color="warn" type="submit" [disabled]="!registerForm.valid">Zarejestruj</button>
+  </form>
+
+</div>

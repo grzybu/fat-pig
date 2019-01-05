@@ -1,0 +1,33 @@
+<div *ngIf="auth.user  as loggedUser">
+
+  <mat-card-title>Dane:</mat-card-title>
+
+<div>
+    <label>Email:
+      <input [(ngModel)]="loggedUser.email" placeholder="name">
+    </label>
+</div>
+
+  <div>
+    <label>Email:
+      <input [(ngModel)]="loggedUser.displayName" placeholder="name">
+    </label>
+  </div>
+
+<div>
+    <label>Weight:
+      <input [(ngModel)]="loggedUser.weight" placeholder="weight">
+    </label>
+</div>
+
+<div>
+    <label>Height:
+      <input [(ngModel)]="loggedUser.height" placeholder="height">
+    </label>
+</div>
+
+<div>
+  Test:
+</div>
+
+</div>

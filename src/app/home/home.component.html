@@ -1,0 +1,12 @@
+<mat-card-content *ngIf="authService.user | async  else notLogged">
+  Jesteś tłustą świnią więc zacznij coś robić
+
+</mat-card-content>
+
+<ng-template #notLogged>
+  Sprawdź jak bardzo tłustą świnią jesteś <a mat-flat-button routerLink="/login">Zaloguj się</a>
+
+
+</ng-template>
+
+<img mat-card-xl-image id="fatpig" src="/assets/pig.gif" alt="fat-pig" />
